@@ -1,0 +1,60 @@
+# The pseudocode for Selection Sort, Insertion Sort, and Bubble Sort are
+# borrowed from here: http://faculty.cs.niu.edu/~hutchins/csci241/sorting.htm
+
+class Sort:
+    public method selectionSort(array A, bool ascending=true)
+        N = length of A
+        For I=0 to N-1 do:
+            SmallSub = I
+            For J=I+1 to N-1 do:
+                If ascending is true and A[J] < A[SmallSub]
+                    SmallSub = J
+                Else-If ascending is false and A[J] > A[SmallSub]
+                    SmallSub = J
+                end-If
+            end-For
+            Temp = A[I]
+            A[I] = A[SmallSub]
+            A[SmallSub] = Temp
+        end-For
+
+    public method insertionSort(array A, bool ascending=true)
+        N = length of A
+        For I=1 to N-1
+            J = I
+            If ascending is true
+                Do while (J>0) and (A[J] < A[J-1])
+                    Temp = A[J]
+                    A[J] = A[J-1]
+                    A[J-1] = Temp
+                    J = J-1
+                End-Do
+            Else
+                Do while (J>0) and (A[J] > A[J-1])
+                    Temp = A[J]
+                    A[J] = A[J-1]
+                    A[J-1] = Temp
+                    J = J-1
+                End-Do
+            End-If
+        End-For
+
+    public method bubbleSort(array A, bool ascending=true)
+        N = length of A
+        For I=0 to N-2
+            For J=0 to N-2
+                If ascending is true
+                    If A[J] > A[J+1]
+                        Temp = A[J]
+                        A[J] = A[J+1]
+                        A[J+1] = Temp
+                    End-If
+                Else 
+                    If A[J] < A[J+1]
+                        Temp = A[J]
+                        A[J] = A[J+1]
+                        A[J+1] = Temp
+                    End-If
+                End-If
+            End-For
+        End-For
