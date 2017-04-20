@@ -11,12 +11,12 @@ class Sort:
                     SmallSub = J
                 Else-If ascending is false and A[J] > A[SmallSub]
                     SmallSub = J
-                end-If
-            end-For
+                End-If
+            End-For
             Temp = A[I]
             A[I] = A[SmallSub]
             A[SmallSub] = Temp
-        end-For
+        End-For
 
     public method insertionSort(array A, bool ascending=true)
         N = length of A
